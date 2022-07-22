@@ -116,7 +116,7 @@ jobs:
       # Your job code here
       - run:
           name: Analyse frontend
-          command:
+          command: |
               cd frontend
               npm install
               npm audit --audit-level=critical
@@ -134,7 +134,7 @@ jobs:
       # Your job code here
       - run:
           name: Analyse backend 
-          command:
+          command: |
               cd backend
               npm install
               npm audit --audit-level=critical
