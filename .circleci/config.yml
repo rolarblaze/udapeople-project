@@ -100,7 +100,7 @@ jobs:
           name: Run backend test
           command: |
               cd backend
-              npm intall
+              npm install
               npm run test
             
   # scan-frontend:
