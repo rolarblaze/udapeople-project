@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            npm frontend
+            cd frontend
             npm install
             npm run build
       - save_cache:
@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Back-end build
           command: |
-             npm backend
+             cd backend
              npm install
              npm run build
       - save_cache:
