@@ -7,8 +7,8 @@ commands:
     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
     parameters:
       workflow_id:
-      type: string
-      default: ${CIRCLE_WORKFLOW_ID}   
+       type: string
+      #default: ${CIRCLE_WORKFLOW_ID}   
     steps:
       - run:
           name: Destroy environments
@@ -164,7 +164,8 @@ jobs:
               --template-file .circleci/files/backend.yml \
               --tags project=your-tag \
               --stack-name "udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
-              --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  
+              --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}" \
+              --tags project=udapeople
               
       - run:
           name: Ensure front-end infrastructure exist
