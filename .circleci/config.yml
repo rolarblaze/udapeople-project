@@ -199,7 +199,7 @@ jobs:
       # Checkout code from git
       - checkout
       # Add ssh keys with fingerprint
-      - add_ssh_key:
+      - add_ssh_keys:
           fingerprints: 
             - 'fd:c2:38:25:e5:28:22:9b:0a:5a:19:5b:8e:'
 
