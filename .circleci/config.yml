@@ -150,6 +150,7 @@ jobs:
               npm audit --audit-level=critical
 
   deploy-infrastructure:
+    context: udapeople-context
     docker:
       # Docker image here that supports AWS CLI
       - image: amazon/aws-cli
