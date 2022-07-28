@@ -387,16 +387,16 @@ jobs:
 workflows:
   default:
     jobs:
-      # - build-frontend
-      # - build-backend
+      - build-frontend
+      - build-backend
       - test-frontend:
           requires: [build-frontend]
-      # - test-backend:
-      #     requires: [build-backend]
-      # - scan-backend:
-      #     requires: [build-backend]
-      # - scan-frontend:
-      #     requires: [build-frontend]
+      - test-backend:
+          requires: [build-backend]
+      - scan-backend:
+          requires: [build-backend]
+      - scan-frontend:
+          requires: [build-frontend]
       - deploy-infrastructure:
           # requires: [frontend-build, backend-build]
           requires: [test-frontend, test-backend, scan-frontend, scan-backend]
@@ -410,10 +410,12 @@ workflows:
       - run-migrations:
           requires: [configure-infrastructure]
           context: udapeople-context
-      # - deploy-frontend:
-      #     requires: [run-migrations]
-      # - deploy-backend:
-      #     requires: [run-migrations]
+      - deploy-frontend:
+          requires: [run-migrations]
+          context: udapeople-context
+      - deploy-backend:
+          requires: [run-migrations]
+          context: udapeople-context
       # - smoke-test:
       #     requires: [deploy-backend, deploy-frontend]
       # - cloudfront-update:
