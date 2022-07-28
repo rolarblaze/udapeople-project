@@ -12,7 +12,7 @@ commands:
     steps:
       - run:
           name: Destroy environments
-          #when: on_fail
+          when: on_fail
           command: |
             aws delete-stack --stack-name \
             --stack-name udapeople-backend-<<parameters.workflow_id>>
@@ -304,7 +304,7 @@ jobs:
             apk add --update --no-cache tar gzip nodejs npm aws-cli ansible 
       - attach_workspace:
           at: ~/
-        restore_cache:
+      - restore_cache:
           keys: [backend-build]
       - run:
           name: Deploy backend
