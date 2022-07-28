@@ -12,7 +12,7 @@ commands:
     steps:
       - run:
           name: Destroy environments
-          when: on_fail
+          #when: on_fail
           command: |
             aws delete-stack --stack-name \
             --stack-name udapeople-backend-<<parameters.workflow_id>>
