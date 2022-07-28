@@ -38,7 +38,7 @@ commands:
             #  cd ~/project/backend
             #  npm install
             #  Add revert code here. You can find this in the Getting Started section.
-              exit 1
+              # exit 1
             fi
             # cd: ~/backend/project
             # npm install 
