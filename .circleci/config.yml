@@ -453,7 +453,6 @@ workflows:
           context: udapeople-context
       - deploy-backend:
           requires: [run-migrations]
-          context: udapeople-context
       # - smoke-test:
       #     requires: [deploy-backend, deploy-frontend]
       # - cloudfront-update:
