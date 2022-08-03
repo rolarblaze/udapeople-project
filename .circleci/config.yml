@@ -437,9 +437,9 @@ workflows:
           # requires: [frontend-build, backend-build]
           requires: [test-frontend, test-backend, scan-frontend, scan-backend]
           context: udapeople-context
-          filters:
-            branches:
-              only: [test-feature-branch]
+          # filters:
+          #   branches:
+          #     only: [test-feature-branch]
       - configure-infrastructure:
           requires: [deploy-infrastructure]
           context: udapeople-context
